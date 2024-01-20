@@ -1,0 +1,36 @@
+/* Header.module.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #0f73b8;
+  color: #fff;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 150x; /* Dostosuj szerokość do swojego logo */
+  height: 50px; /* Dostosuj wysokość do swojego logo */
+  margin-right: 10px;
+}
+
+.logoText {
+  font-size: 24px;
+}
+
+.navContainer {
+  display: flex;
+}
+
+.navLink {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 25px;
+}
