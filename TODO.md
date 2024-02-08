@@ -30,48 +30,48 @@ IMPORTANT!
 Create table which you will be referrencing first!
 
 ### Tables
-    - room_types (table | ENUM )
-        - room_type_id (INTEGER)
-        - type (TEXT)
-            - Queen, 
-            - Twin, 
-            - Family, 
-            - King, 
-            - Executive, 
-            - Presidential 
-    - rooms 
-        - id (INTEGER)
-        - room_type (FK room_types.room_type_id)
-        - amenites ( BLOB | JSONB )
-        - price (REAL)
-    - clients
-        - id (INTEGER)
-        - fname (TEXT)
-        - lname (TEXT)
-        - email (TEXT)
-    - extras_types
-        - extras_type_id (INTEGER)
-        - type (TEXT)
-    - extras
-        - id (INTEGER)
-        - name (TEXT)
-        - price (REAL)
-        - type (INTEGER)
-    - users
-        - user_id (INTEGER)
-        - username (TEXT)
-        - fname (TEXT)
-        - lname (TEXT)
-        - password (TEXT)
-        - email (TEXT)
-    - bookings
-        - id (INTEGER)
-        - client_id (INTEGER)
-        - date_from (INTEGER)
-        - date_to (INTEGER)
-        - days (INTEGER)
-        - price (REAL)
-        - booked_by (FK users.user_id)
+- room_types (table | ENUM )
+    - room_type_id (INTEGER)
+    - type (TEXT)
+        - Queen, 
+        - Twin, 
+        - Family, 
+        - King, 
+        - Executive, 
+        - Presidential 
+- rooms 
+    - id (INTEGER)
+    - room_type (FK room_types.room_type_id)
+    - amenites ( BLOB | JSONB )
+    - price (REAL)
+- clients
+    - id (INTEGER)
+    - fname (TEXT)
+    - lname (TEXT)
+    - email (TEXT)
+- extras_types
+    - extras_type_id (INTEGER)
+    - type (TEXT)
+- extras
+    - id (INTEGER)
+    - name (TEXT)
+    - price (REAL)
+    - type (INTEGER)
+- users
+    - user_id (INTEGER)
+    - username (TEXT)
+    - fname (TEXT)
+    - lname (TEXT)
+    - password (TEXT)
+    - email (TEXT)
+- bookings
+    - id (INTEGER)
+    - client_id (INTEGER)
+    - date_from (INTEGER)
+    - date_to (INTEGER)
+    - days (INTEGER)
+    - price (REAL)
+    - booked_by (FK users.user_id)
 
 
 ## Backend
