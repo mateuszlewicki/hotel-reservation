@@ -1,18 +1,18 @@
 # HOTEL-RESERVATION TODOS
 
+
+IMPORTANT
+
+Think if Bot is working E2E or give basket
+
+# Remarks
+
 room amenites != extras
 
 room amenites - things present in room
 
 extras - additional paid services avalible for customers 
 ## Database
-- [ ] POSTGRESQL Database objects (FUTURE)
-    - [ ] room_types
-    - [ ] rooms
-    - [ ] extras_types
-    - [ ] extras
-    - [ ] users
-    - [ ] bookings
 - [ ] SQLITE Database objects
     - [ ] room_types
     - [ ] rooms
@@ -28,52 +28,8 @@ IMPORTANT!
 Create table which you will be referrencing first!
 
 ### Tables
-- room_types (table | ENUM )
-    - room_type_id (INTEGER)
-    - type (TEXT)
-        - Queen, 
-        - Twin, 
-        - Family, 
-        - King, 
-        - Executive, 
-        - Presidential 
-- rooms 
-    - room_id (INTEGER PK)
-    - room_type_id (FK room_types.room_type_id)
-    - amenites ( BLOB | JSONB )
-    - price (REAL)
-    - image BLOB
-- extras_types
-    - extras_type_id (INTEGER PK)
-    - type (TEXT)
-- extras
-    - extras_id (INTEGER PK)
-    - name (TEXT)
-    - price (REAL)
-    - type (INTEGER)
-- users
-    - user_id (INTEGER PK)
-    - username (TEXT)
-    - fname (TEXT)
-    - lname (TEXT)
-    - password (TEXT(MD5))
-    - email (TEXT)
-    - avatar BLOB
-- bookings
-    - booking_id (INTEGER PK)
-    - client_id (INTEGER FK clients.client_id)
-    - date_from (INTEGER)
-    - date_to (INTEGER)
-    - days (INTEGER)
-    - price (REAL)
-    - comment (TEXT)
-- roles
-    - role_id (INTEGER PK)
-    - role (TEXT)
-- user_roles
-    - user_id (INTEGER PK FK users.user_id)
-    - role_id (INTEGER PK FK roles.role_id)
 
+[SCHEMA](./SCHEMA.MD)
 
 ## Backend
 // GET would retrieve data,
@@ -119,13 +75,26 @@ Create table which you will be referrencing first!
     - DELETE: auth
         - /extras/{id} - delete specific extras 
     - JSON Response struct
-
+- basket
 
 ## Frontend
 - [ ] CSS - proper usage of bootstrap
+- add basket
 ## AI
 
 ## Authentication API
-Token based - JWT
+- [ ] Token based - JWT 
 
 ## Authentication - app 
+- [ ] registration
+- [ ] login
+
+## FUTURE
+- [ ] POSTGRESQL Database objects (FUTURE)
+    - [ ] room_types
+    - [ ] rooms
+    - [ ] extras_types
+    - [ ] extras
+    - [ ] users
+    - [ ] bookings
+- [ ] Split backend and data into separate folders

@@ -1,0 +1,46 @@
+# Database Schema
+- room_types
+    - room_type_id (INTEGER)
+    - type (TEXT)
+        - Queen, 
+        - Twin, 
+        - Family, 
+        - King, 
+        - Executive, 
+        - Presidential 
+- rooms 
+    - room_id (INTEGER PK)
+    - room_type_id (FK room_types.room_type_id)
+    - amenites ( BLOB | JSONB )
+    - price (REAL)
+    - image BLOB
+- extras_types
+    - extras_type_id (INTEGER PK)
+    - type (TEXT)
+- extras
+    - extras_id (INTEGER PK)
+    - name (TEXT)
+    - price (REAL)
+    - type (INTEGER)
+- users
+    - user_id (INTEGER PK)
+    - username (TEXT)
+    - fname (TEXT)
+    - lname (TEXT)
+    - password (TEXT(MD5))
+    - email (TEXT)
+    - avatar BLOB
+- bookings
+    - booking_id (INTEGER PK)
+    - user_id (INTEGER FK users.user_id)
+    - date_from (INTEGER)
+    - date_to (INTEGER)
+    - days (INTEGER)
+    - price (REAL)
+    - comment (TEXT)
+- roles
+    - role_id (INTEGER PK)
+    - role (TEXT)
+- user_roles
+    - user_id (INTEGER PK FK users.user_id)
+    - role_id (INTEGER PK FK roles.role_id)
