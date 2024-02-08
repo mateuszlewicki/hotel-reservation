@@ -11,7 +11,10 @@ import Stack from "react-bootstrap/Stack";
 import { fakeRoomsData } from "../../fakeData/roomsData";
 import MyChatbot from "../MyChatBot/MyChatbot";
 import style from "./MyCalendar.module.css";
+
+
 function MyCalendar() {
+  // return <Calendar  />
   const [value, dateOnChange] = useState(new Date());
   const [roomInfo, setRoomInfo] = useState({
     occupiedRooms: [],
