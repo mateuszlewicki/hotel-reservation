@@ -1,10 +1,12 @@
-# HOTEL-RESERVARION TODO
+# HOTEL-RESERVATION TODOS
 
 room amenites != extras
+
 room amenites - things present in room
+
 extras - additional paid services avalible for customers 
 ## Database
-- [] Database tables (postgress JSONB document)
+- [ ] Database tables (postgress JSONB document)
     - rooms 
         - id
         - type (ENUM) // (based on hilton warsaw two hotels)
@@ -39,11 +41,14 @@ extras - additional paid services avalible for customers
         - email
         - token // maybe not directly 
 ## Backend
-// GET would retrieve data, 
+// GET would retrieve data,
+
 // POST will create data, 
+
 // PUT will update data, 
+
 // DELETE will get rid of the data.
-- [] routes for rooms CRUD (CeateReadUpdateDelete)
+- [ ] routes for rooms CRUD (CeateReadUpdateDelete)
     - GET: public
         - /rooms - get all rooms
         - /rooom/{id} - get by id 
@@ -55,7 +60,7 @@ extras - additional paid services avalible for customers
     - DELETE: auth
         - /rooms/{id} - delete room 
     - JSON Response struct
-- [] routes for bookings (CRUD)
+- [ ] routes for bookings (CRUD)
     - GET 
         - /bookings - get all rooms
         - /bookings/{id} - get by id 
@@ -67,7 +72,7 @@ extras - additional paid services avalible for customers
     - DELETE: auth
         - /bookings/{id} - delete booking 
     - JSON Response struct
-- [] routes for extras (CRUD)
+- [ ] routes for extras (CRUD)
     - GET 
         - /extras - get all rooms
         - /extras/{id} - get by id 
@@ -82,7 +87,7 @@ extras - additional paid services avalible for customers
 
 
 ## Frontend
-- [] CSS - proper usage of bootstrap
+- [ ] CSS - proper usage of bootstrap
 ## AI
 
 ## Authentication API
