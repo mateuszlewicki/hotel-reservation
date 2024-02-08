@@ -40,38 +40,44 @@ Create table which you will be referrencing first!
         - Executive, 
         - Presidential 
 - rooms 
-    - id (INTEGER)
-    - room_type (FK room_types.room_type_id)
+    - room_id (INTEGER PK)
+    - room_type_id (FK room_types.room_type_id)
     - amenites ( BLOB | JSONB )
     - price (REAL)
 - clients
-    - id (INTEGER)
+    - client_id (INTEGER PK)
     - fname (TEXT)
     - lname (TEXT)
     - email (TEXT)
 - extras_types
-    - extras_type_id (INTEGER)
+    - extras_type_id (INTEGER PK)
     - type (TEXT)
 - extras
-    - id (INTEGER)
+    - extras_id (INTEGER PK)
     - name (TEXT)
     - price (REAL)
     - type (INTEGER)
 - users
-    - user_id (INTEGER)
+    - user_id (INTEGER PK)
     - username (TEXT)
     - fname (TEXT)
     - lname (TEXT)
-    - password (TEXT)
+    - password (TEXT(MD5))
     - email (TEXT)
 - bookings
-    - id (INTEGER)
-    - client_id (INTEGER)
+    - booking_id (INTEGER PK)
+    - client_id (INTEGER FK clients.client_id)
     - date_from (INTEGER)
     - date_to (INTEGER)
     - days (INTEGER)
     - price (REAL)
-    - booked_by (FK users.user_id)
+    - comment (TEXT)
+- roles
+    - role_id (INTEGER PK)
+    - role (TEXT)
+- user_roles
+    - user_id (INTEGER PK FK users.user_id)
+    - role_id (INTEGER PK FK roles.role_id)
 
 
 ## Backend
@@ -126,3 +132,5 @@ Create table which you will be referrencing first!
 
 ## Authentication API
 Token based - JWT
+
+## Authentication - app 
