@@ -6,40 +6,74 @@ room amenites - things present in room
 
 extras - additional paid services avalible for customers 
 ## Database
-- [ ] Database tables (postgress JSONB document)
-    - rooms 
-        - id
-        - type (ENUM) // (based on hilton warsaw two hotels)
+- [ ] POSTGRESQL Database objects (future)
+    - [ ] room_types
+    - [ ] rooms
+    - [ ] clients
+    - [ ] extras_types
+    - [ ] extras
+    - [ ] users
+    - [ ] bookings
+- [ ] SQLITE Database objects
+    - [ ] room_types
+    - [ ] rooms
+    - [ ] clients
+    - [ ] extras_types
+    - [ ] extras
+    - [ ] users
+    - [ ] bookings
+
+TYPES are indicted ( SQLITE | POSTGRESQL )
+
+IMPORTANT!
+
+Create table which you will be referrencing first!
+
+### Tables
+    - room_types (table | ENUM )
+        - room_type_id (INTEGER)
+        - type (TEXT)
             - Queen, 
             - Twin, 
             - Family, 
             - King, 
             - Executive, 
-            - Presidential  
-        - amenites
+            - Presidential 
+    - rooms 
+        - id (INTEGER)
+        - room_type (FK room_types.room_type_id)
+        - amenites ( BLOB | JSONB )
+        - price (REAL)
     - clients
-        - id
-        - fname
-        - lname
-        - mail
+        - id (INTEGER)
+        - fname (TEXT)
+        - lname (TEXT)
+        - email (TEXT)
+    - extras_types
+        - extras_type_id (INTEGER)
+        - type (TEXT)
     - extras
-        - id
-        - name
-        - price
-        - type
-    - bookings
-        - id
-        - client_data
-        - date_from
-        - date_to
-        - days
-        - price
-        - booked_by
+        - id (INTEGER)
+        - name (TEXT)
+        - price (REAL)
+        - type (INTEGER)
     - users
-        - login
-        - password
-        - email
-        - token // maybe not directly 
+        - user_id (INTEGER)
+        - username (TEXT)
+        - fname (TEXT)
+        - lname (TEXT)
+        - password (TEXT)
+        - email (TEXT)
+    - bookings
+        - id (INTEGER)
+        - client_id (INTEGER)
+        - date_from (INTEGER)
+        - date_to (INTEGER)
+        - days (INTEGER)
+        - price (REAL)
+        - booked_by (FK users.user_id)
+
+
 ## Backend
 // GET would retrieve data,
 
@@ -91,4 +125,4 @@ extras - additional paid services avalible for customers
 ## AI
 
 ## Authentication API
-Token based - hashed login:password (MD5)
+Token based - JWT
