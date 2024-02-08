@@ -68,6 +68,7 @@ CREATE TABLE bookings (
         AS (unixepoch(date_to)-unixepoch(date_from)) VIRTUAL,
     price REAL NOT NULL,
     comment TEXT,
+    created_at INTEGER DEFAULT CURRENT_TIMESTAMP
     FOREIGN KEY (user_id)
        REFERENCES users (user_id),
 );
@@ -82,5 +83,14 @@ CREATE TABLE rooms (
     room_type_id INTEGER NOT NULL,
     price REAL NOT NULL,
     amenites BLOB,
-    image BLOB,
+    image BLOB
 );
+
+CREATE TABLE baskets (
+    basket_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    content BLOB,
+    FOREIGN KEY (user_id)
+        REFERENCES users (user_id)
+)
+

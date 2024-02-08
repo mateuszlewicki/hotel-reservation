@@ -6,6 +6,8 @@ INSERT INTO room_types(type) VALUES ('King'); -- 4
 INSERT INTO room_types(type) VALUES ('Executive'); -- 5
 INSERT INTO room_types(type) VALUES ('Presidential'); -- 6
 -- initial user (admin - 1, chatbot - 2, dummyclient - 3 ) 
+-- ONLY USED IN DEV 
+-- TODO: CHANGE LATER
 INSERT INTO users (username, password, fname, lname, email)
 VALUES 
     ('admin','21232f297a57a5a743894a0e4a801fc3','Super','User','lordvader@localhost');
