@@ -4,7 +4,6 @@ PRAGMA foreign_keys = OFF
 DROP TABLE IF EXISTS roles;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS user_roles;
-DROP TABLE IF EXISTS clients;
 DROP TABLE IF EXISTS extras_types;
 DROP TABLE IF EXISTS extras;
 DROP TABLE IF EXISTS bookings;
@@ -30,7 +29,8 @@ CREATE TABLE users (
     password TEXT NOT NULL,
     fname TEXT,
     lname TEXT,
-    email TEXT
+    email TEXT,
+    avatar BLOB
 );
 -- roles binding
 
@@ -44,13 +44,6 @@ CREATE TABLE user_roles{
         REFERENCES roles (role_id)
     PRIMARY KEY (user_id,role_id)
 };
-
-CREATE TABLE clients (
-    client_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    fname TEXT NOT NULL,
-    lname TEXT NOT NULL,
-    email TEXT NOT NULL
-);
 
 CREATE TABLE extras_types (
     extras_type_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -68,15 +61,15 @@ CREATE TABLE extras (
 
 CREATE TABLE bookings (
     booking_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    client_id INTEGER NOT NULL,
+    user_id INTEGER NOT NULL,
     date_from INTEGER NOT NULL,
     date_to INTEGER NOT NULL,
     duration INTEGER GENERATED ALWAYS 
         AS (unixepoch(date_to)-unixepoch(date_from)) VIRTUAL,
     price REAL NOT NULL,
     comment TEXT,
-    FOREIGN KEY (client_id)
-       REFERENCES clients (client_id),
+    FOREIGN KEY (user_id)
+       REFERENCES users (user_id),
 );
 
 CREATE TABLE room_types (
@@ -88,5 +81,6 @@ CREATE TABLE rooms (
     room_id INTEGER PRIMARY KEY AUTOINCREMENT,
     room_type_id INTEGER NOT NULL,
     price REAL NOT NULL,
-    amenites BLOB
+    amenites BLOB,
+    image BLOB,
 );

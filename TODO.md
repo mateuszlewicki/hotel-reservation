@@ -6,10 +6,9 @@ room amenites - things present in room
 
 extras - additional paid services avalible for customers 
 ## Database
-- [ ] POSTGRESQL Database objects (future)
+- [ ] POSTGRESQL Database objects (FUTURE)
     - [ ] room_types
     - [ ] rooms
-    - [ ] clients
     - [ ] extras_types
     - [ ] extras
     - [ ] users
@@ -17,7 +16,6 @@ extras - additional paid services avalible for customers
 - [ ] SQLITE Database objects
     - [ ] room_types
     - [ ] rooms
-    - [ ] clients
     - [ ] extras_types
     - [ ] extras
     - [ ] users
@@ -44,11 +42,7 @@ Create table which you will be referrencing first!
     - room_type_id (FK room_types.room_type_id)
     - amenites ( BLOB | JSONB )
     - price (REAL)
-- clients
-    - client_id (INTEGER PK)
-    - fname (TEXT)
-    - lname (TEXT)
-    - email (TEXT)
+    - image BLOB
 - extras_types
     - extras_type_id (INTEGER PK)
     - type (TEXT)
@@ -64,6 +58,7 @@ Create table which you will be referrencing first!
     - lname (TEXT)
     - password (TEXT(MD5))
     - email (TEXT)
+    - avatar BLOB
 - bookings
     - booking_id (INTEGER PK)
     - client_id (INTEGER FK clients.client_id)
