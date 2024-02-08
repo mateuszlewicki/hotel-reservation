@@ -19,7 +19,8 @@ PRAGMA foreign_keys = ON
 
 CREATE TABLE roles {
     role_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    role TEXT UNIQUE NOT NULL
+    role_name TEXT UNIQUE NOT NULL
+    role_hash TEXT UNIQUE NOT NULL
 };
 
 -- app users
@@ -53,7 +54,7 @@ CREATE TABLE clients (
 
 CREATE TABLE extras_types (
     extras_type_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    type TEXT UNIQUE NOT NULL,
+    type_text TEXT UNIQUE NOT NULL,
 );
 
 CREATE TABLE extras (
@@ -70,7 +71,7 @@ CREATE TABLE bookings (
     client_id INTEGER NOT NULL,
     date_from INTEGER NOT NULL,
     date_to INTEGER NOT NULL,
-    days INTEGER GENERATED ALWAYS 
+    duration INTEGER GENERATED ALWAYS 
         AS (unixepoch(date_to)-unixepoch(date_from)) VIRTUAL,
     price REAL NOT NULL,
     comment TEXT,
