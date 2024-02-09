@@ -13,13 +13,16 @@ room amenites - things present in room
 
 extras - additional paid services avalible for customers 
 ## Database
-- [ ] SQLITE Database objects
-    - [ ] room_types
-    - [ ] rooms
-    - [ ] extras_types
-    - [ ] extras
-    - [ ] users
-    - [ ] bookings
+- [x] SQLITE Database objects
+    - [x] room_types
+    - [x] rooms
+    - [x] extras_types
+    - [x] extras
+    - [x] users
+    - [x] roles
+    - [x] user_roles
+    - [x] bookings
+    - [x] basket
 
 ### Tables
 
@@ -98,6 +101,9 @@ extras - additional paid services avalible for customers
     - [ ] extras_types
     - [ ] extras
     - [ ] users
+    - [ ] roles
+    - [ ] user_roles
     - [ ] bookings
+    - [ ] basket
 - [ ] Split backend and data into separate folders
 - [ ] Cron python script for removing baskets
