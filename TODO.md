@@ -46,8 +46,8 @@ extras - additional paid services avalible for customers
         - /rooms/{id} - delete room 
     - JSON Response struct
 - [ ] routes for bookings (CRUD)
-    - GET 
-        - /bookings - get all rooms
+    - GET: public 
+        - /bookings - get all bookings
         - /bookings/{id} - get by id 
         - /bookings? - filter params 
     - POST: auth
@@ -59,7 +59,7 @@ extras - additional paid services avalible for customers
     - JSON Response struct
 - [ ] routes for extras (CRUD)
     - GET 
-        - /extras - get all rooms
+        - /extras - get all extras
         - /extras/{id} - get by id 
         - /extras? - filter params 
     - POST: auth
@@ -69,11 +69,19 @@ extras - additional paid services avalible for customers
     - DELETE: auth
         - /extras/{id} - delete specific extras 
     - JSON Response struct
-- basket
+- [ ] routes for basket (CRUD)(Condition current user == requested_user)
+    - GET: auth
+        - /basket?user_id={id} - get by user_id 
+    - POST: auth
+        - /basket - add new basket {json}
+    - PUT: auth
+        - /basket?user_id={id} - update specific extras {json}
+    - DELETE - CRON
+    - JSON Response struct
 
 ## Frontend
 - [ ] CSS - proper usage of bootstrap
-- add basket
+- add basket view
 ## AI
 
 ## Authentication API
