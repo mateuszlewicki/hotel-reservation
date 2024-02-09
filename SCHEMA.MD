@@ -44,3 +44,7 @@
 - user_roles
     - user_id (INTEGER PK FK users.user_id)
     - role_id (INTEGER PK FK roles.role_id)
+- baskets 
+    - basket_id (INTEGER PK)
+    - user_id (INTEGER FK roles.role_id)
+    - content (BLOB)

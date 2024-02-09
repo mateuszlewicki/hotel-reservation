@@ -21,12 +21,6 @@ extras - additional paid services avalible for customers
     - [ ] users
     - [ ] bookings
 
-TYPES are indicted ( SQLITE | POSTGRESQL )
-
-IMPORTANT!
-
-Create table which you will be referrencing first!
-
 ### Tables
 
 [SCHEMA](./SCHEMA.MD)
@@ -98,3 +92,4 @@ Create table which you will be referrencing first!
     - [ ] users
     - [ ] bookings
 - [ ] Split backend and data into separate folders
+- [ ] Cron python script for removing baskets
