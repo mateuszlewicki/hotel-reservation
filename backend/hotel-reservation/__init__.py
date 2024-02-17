@@ -1,7 +1,7 @@
 import os
 from flask import Flask
 from .database import db
-from . import auth
+
 
 def create_app(test_config=None):
     # create and configure the app
